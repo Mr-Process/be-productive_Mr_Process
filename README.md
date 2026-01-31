@@ -1,77 +1,56 @@
-Welcome to "Be Productive", a collection of useful scripts and commands I use on a daily basis as a professional software developer.
+# Be Productive
 
-**OS**: Ubuntu 24.04.X LTS
+![Be Productive Logo](be_productive_logo.png)
 
-[![A Danny Blaker project badge](https://github.com/dannyblaker/dannyblaker.github.io/blob/main/danny_blaker_project_badge.svg)](https://github.com/dannyblaker/)
+A curated collection of automation scripts & commands to streamline workflows for tech professionals. Maintained by **Jonathon Powell**, a network systems administrator and founder of a digital library of AI-powered business templates.
 
-![be productive logo](be_productive_logo.png)
+## What's Inside
 
-## Example:
+### System & Server Management
+- Operating system installation & updates
+- Clean up directories and remove empty folders
+- Manage cron jobs and task queues
 
-Here's one of my favourites... a one-liner that recursively deletes all empty folders, starting from the current directory:
+### Network Tools
+- Diagnostics (ping, traceroute)
+- Firewall configuration & security scans
+- Monitoring & logging utilities
 
-```sh
-while true; do output=$(sudo find . -type d -empty -exec rmdir {} \; 2>&1); echo "$output"; if [ -z "$output" ]; then echo "Output is empty."; break; fi done
-```
+### Development Utilities
+- Git helpers for common workflows
+- Package management and environment setup
+- Python, Go and Node development tools
 
-See [script here](./folders/delete/delete_empty_dirs_one_liner.sh)
+### Business Automation
+- Convert files between formats (PDF, CSV, etc.)
+- Generate contracts, proposals and invoices using AI templates
+- Integrate with DocuSign and other e-signature platforms
 
-Note: In some places I've included comments *below* a command as opposed to *above* in order to make copying and pasting faster.
+## Installation
 
-# Setup
+Clone the repository and run the setup script to install dependencies:
 
-1. Install dependancies
-
-```sh
+```bash
+git clone https://github.com/Mr-Process/be-productive_Mr_Process.git
+cd be-productive_Mr_Process
 bash install_deps.sh
 ```
 
-2. Create all `.env` files
+## Usage
 
-```sh
-bash create_env_files.sh
+Navigate into the category folder you need and run the desired script. For example, to remove empty directories:
+
+```bash
+cd folders
+bash delete_empty_dirs_one_liner.sh
 ```
 
-# Run
+Each script includes comments explaining its purpose and usage. Many commands can be copied and pasted directly into your terminal.
 
-## Script Type 1
+## Contributing
 
-Scripts that have the following at the beginning...
-```sh
-#!/bin/bash
+Contributions are welcome! Please submit pull requests or open issues with improvements. If you build new automation that complements network management or AI-driven business workflows, feel free to share.
 
-set -a
-source .env
-set +a
-```
-... read inputs via a `.env` located in the same directory as the script. 
+## License
 
-Therefore:
-
-Step 1: modify the `.env` as needed
-Step 2: navigate to the directory containing the script and run using `bash`
-
-## Script Type 2
-
-Scripts that have do **not** have `#!/bin/bash...` at the beginning contain commands that can be copied and pasted directly into the terminal. Make any modifications as needed.
-
-# Tools
-The following are additional tools I use to increase productivity:
-
-## Ubuntu App Center
-
-[Inkscape](https://inkscape.org/)
-
-## Snap store
-
-[Draw.io](https://snapcraft.io/install/drawio/ubuntu#install)
-
-## Other
-
-| Tool     | Website                  | Installation Docs                                             |
-|----------|--------------------------|---------------------------------------------------------------|
-| VS code | [code.visualstudio.com](https://code.visualstudio.com/) | [Docs](https://code.visualstudio.com/download) |
-| chrome | [chrome](https://www.google.com/intl/en_au/chrome/dr/download/) | [Docs](https://www.google.com/intl/en_au/chrome/dr/download/) |
-| nvm      | [nvm](https://github.com/nvm-sh/nvm) | [Docs](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)         |
-| n8n      | [n8n.io](https://n8n.io/) | [Docs](https://docs.n8n.io/hosting/installation/npm/)         |
-| node-red | [nodered.org](https://nodered.org/) | [Docs](https://nodered.org/docs/getting-started/local) |
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
